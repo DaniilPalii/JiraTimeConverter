@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "JiraTimeConverter": {
+      "commandName": "Project",
+      "commandLineArgs": "4w 3d 5h 7m"
+    }
+  }
+}
