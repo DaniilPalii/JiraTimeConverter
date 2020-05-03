@@ -6,17 +6,20 @@ namespace Tests
 {
     public class ConverterTests
     {
-        public ConverterTests(Converter converter)
+        [SetUp]
+        public void SetUp()
         {
-            this.converter = converter;
+            converter = new Converter();
         }
         
-        [TestCase("1d", "2h", ExpectedResult = 10d)]
-        public double Test1(IEnumerable<string> jiraTimeItems)
+        [Test]
+        public void Test()
         {
-            return converter.ConvertToNormalHours(jiraTimeItems);
+            Assert.That(converter.ConvertToNormalHours(new[] { "1d" }), Is.EqualTo(8));
+            Assert.That(converter.ConvertToNormalHours(new[] { "1d", "2h" }), Is.EqualTo(10));
+            Assert.That(converter.ConvertToNormalHours(new[] { "1d", "2h", "30m" }), Is.EqualTo(10.5));
         }
 
-        private readonly Converter converter;
+        private Converter converter;
     }
 }
