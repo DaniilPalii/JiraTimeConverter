@@ -25,7 +25,7 @@ namespace JiraTimeConverter
 
         private static void WriteTotalNormalHours(string[] jiraTimeItems)
         {
-            var totalHours = new JiraTimeConverter().ConvertToNormalHours(jiraTimeItems);
+            var totalHours = new Converter().ConvertToNormalHours(jiraTimeItems);
             Console.WriteLine($"Total normal hours: {totalHours}");
         }
     }

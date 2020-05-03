@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace JiraTimeConverter
 {
-    public class JiraTimeConverter
+    public class Converter
     {
-        public double ConvertToNormalHours(string[] jiraTimeItems)
+        public double ConvertToNormalHours(IEnumerable<string> jiraTimeItems)
         {
             var totalHours = 0d;
 
